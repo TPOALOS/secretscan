@@ -14,7 +14,7 @@ import re
 import subprocess
 import sys
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "venv", ".tox", ".mypy_cache", ".pytest_cache",
              ".ruff_cache", "dist", "build", ".eggs"}
@@ -45,7 +45,7 @@ PATTERNS = [
 ]
 QUOTED = re.compile(r"['\"]([A-Za-z0-9+/=_-]{24,})['\"]")
 ENTROPY_THRESHOLD = 4.5
-PLACEHOLDER = re.compile(r"(?i)example|placeholder|changeme|your[_-]|xxxx|<.*>|\$\{|dummy|^(?:pass(?:word)?|secret|\*+)$")
+PLACEHOLDER = re.compile(r"(?i)example|placeholder|changeme|your[_-]|xxxx|<.*>|\$\{|dummy|^(?:pass(?:word)?|secret|\*+)$|^\[[A-Z]+(?:[_:][A-Z0-9]+)*\]$")
 WEAK_CHECKED = ("generic-assignment", "url-credentials")
 
 

@@ -120,6 +120,16 @@ class NewDetectorTests(unittest.TestCase):
             self.assertEqual(secretscan.scan_text(text), [], text)
 
 
+class RedactionPlaceholderTests(unittest.TestCase):
+    def test_redaction_placeholders_are_not_secrets(self):
+        for text in ("postgres://[USER_1]:[SECRET_1]@db.internal/app", "postgres://[USER]:[REDACTED:SECRET]@db/app",
+                     'password = "[REDACTED:SECRET]"'):
+            self.assertEqual(secretscan.scan_text(text), [], text)
+
+    def test_real_looking_values_still_flagged(self):
+        self.assertTrue(secretscan.scan_text("postgres://admin:S3cr3tPassw0rd@db.internal:5432/app")) # secretscan:ignore
+
+
 class FingerprintTests(unittest.TestCase):
     def test_stable_and_line_independent(self):
         a = secretscan.assign_fingerprints(secretscan.scan_text("k = %s" % AWS, "f.py"))

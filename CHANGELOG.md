@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Redaction placeholders such as `[SECRET_1]` or `[REDACTED:SECRET]` (as produced by logscrub) are no longer reported
+
 ## 1.1.0
 
 - New detectors: GitLab, npm, PyPI, SendGrid, Anthropic and OpenAI-style keys, Slack and Discord webhooks, JWTs,
