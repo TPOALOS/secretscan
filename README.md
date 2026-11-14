@@ -68,3 +68,7 @@ credential that was ever committed.
 ## License
 
 MIT (c) TPOALOS
+
+---
+
+**More tools by [TPOALOS](https://github.com/TPOALOS):** [githook-guard](https://github.com/TPOALOS/githook-guard) · [gitidentity-audit](https://github.com/TPOALOS/gitidentity-audit) · [logscrub](https://github.com/TPOALOS/logscrub) · [all 51 tools](https://tpoalos.github.io)
